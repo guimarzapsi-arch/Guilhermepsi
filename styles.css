@@ -282,7 +282,7 @@ a {
 /* Rodapé */
 .footer {
     background-color: var(--midnight-green) !important;
-    color: var(--dark-green) !important;
+    color: var(--white) !important;
     padding: 60px 20px 20px;
     font-size: 0.95rem;
 }
@@ -295,7 +295,7 @@ a {
 }
 
 .footer-title {
-    color: var(--dark-green) !important;
+    color: var(--white) !important;
     font-size: 1.4rem;
     margin-bottom: 20px;
     font-weight: 700;
@@ -303,7 +303,7 @@ a {
 
 .footer-col p {
     margin-bottom: 8px;
-    color: var(--dark-green) !important;
+    color: #e0e5e3 !important;
 }
 
 .footer-contact-info {
@@ -312,7 +312,7 @@ a {
 }
 
 .footer-contact-info a {
-    color: var(--dark-green);
+    color: var(--white);
     font-weight: 600;
 }
 
@@ -337,7 +337,7 @@ a {
 }
 
 .footer-links a {
-    color: var(--dark-green);
+    color: #e0e5e3;
     transition: color 0.3s ease;
 }
 
@@ -357,24 +357,24 @@ a {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid var(--dark-green);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    color: var(--dark-green);
+    color: var(--white);
     transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    background-color: var(--dark-green);
+    background-color: var(--white);
     color: var(--midnight-green);
-    border-color: var(--dark-green);
+    border-color: var(--white);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(10, 51, 35, 0.2); 
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
     padding-top: 25px;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--dark-green);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .emergency-notice {
