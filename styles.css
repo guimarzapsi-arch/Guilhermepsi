@@ -252,8 +252,6 @@ a {
     hyphens: auto; /* Permite a hifenização automática caso uma palavra seja muito longa */
 }
 
-}
-
 /* --- CORREÇÃO DO RODAPÉ --- */
 .footer {
     background-color: var(--midnight-green) !important; /* Força a cor de fundo Midnight Green */
