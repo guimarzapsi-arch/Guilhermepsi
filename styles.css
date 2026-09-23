@@ -254,10 +254,10 @@ a {
 
 }
 
-/* --- NOVO RODAPÉ ESTILIZADO --- */
+/* --- CORREÇÃO DO RODAPÉ --- */
 .footer {
-    background-color: var(--midnight-green); /* Usando a cor escura da paleta */
-    color: var(--white); /* Texto em branco para alto contraste */
+    background-color: var(--midnight-green) !important; /* Força a cor de fundo Midnight Green */
+    color: var(--white) !important; /* Força o texto em branco */
     padding: 60px 20px 20px;
     font-size: 0.95rem;
 }
@@ -270,7 +270,7 @@ a {
 }
 
 .footer-title {
-    color: var(--white);
+    color: var(--white) !important;
     font-size: 1.4rem;
     margin-bottom: 20px;
     font-weight: 700;
@@ -278,37 +278,11 @@ a {
 
 .footer-col p {
     margin-bottom: 8px;
-    color: #e0e5e3; /* Branco levemente ofuscado para texto normal */
-}
-
-.footer-contact-info {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.footer-contact-info a {
-    color: var(--white);
-    font-weight: 600;
-}
-
-.footer-contact-info a:hover {
-    color: var(--rosy-brown);
-}
-
-.footer-disclaimer {
-    font-style: italic;
-    font-size: 0.85rem;
-    margin-top: 20px;
-    opacity: 0.9;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
+    color: #e0e5e3 !important;
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    list-style: none; /* Remove as bolinhas da lista no rodapé */
 }
 
 .footer-links a {
@@ -359,16 +333,33 @@ a {
 
 }
 
-/* Responsividade (Celulares e Tablets) */
+/* --- CORREÇÃO DE RESPONSIVIDADE (MOBILE) --- */
+/* Certifique-se de que este bloco @media substitua o antigo no final do arquivo */
+
 @media (max-width: 992px) {
-    .split-layout, .about-layout {
-        flex-direction: column;
+    /* Força o empilhamento da foto e do texto na seção Sobre Mim em tablets e celulares */
+    .about-layout {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
         text-align: center;
+        gap: 40px;
     }
     
+    /* Ajusta a largura da foto para não ficar gigante no celular */
+    .about-image-frame {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Centraliza o título "Sobre Mim" no mobile */
     .about-text .title-brown {
-        text-align: center;
-        margin-top: 30px;
+        text-align: center !important;
+    }
+    
+    /* Centraliza o texto no mobile (opcional, mas recomendado para leitura) */
+    .about-text p {
+        text-align: left; /* Ou 'justify' se preferir manter o justificado no mobile */
     }
 }
 
@@ -385,11 +376,21 @@ a {
     }
     
     .cards-grid-small {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 cartão por linha no mobile */
     }
     
     .title-dark, .title-brown {
         font-size: 2rem;
+    }
+    
+    /* Ajusta o rodapé para mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
     }
 }
 
@@ -448,3 +449,5 @@ a {
 .split-layout {
     display: none; 
 }
+
+
