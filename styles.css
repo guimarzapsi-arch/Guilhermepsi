@@ -312,3 +312,51 @@ a {
         font-size: 2rem;
     }
 }
+/* --- NOVOS ESTILOS PARA A SEÇÃO LÚDICA COM BACKGROUND --- */
+
+.section-ludica {
+    position: relative;
+    overflow: hidden; /* Impede que a imagem vaze da seção */
+    padding: 100px 20px;
+    background-color: var(--beige);
+}
+
+.background-ludica {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o fundo sem distorcer */
+    object-position: center;
+    z-index: 1; /* Coloca a imagem no fundo */
+    opacity: 0.35; /* Deixa a imagem sutil para não atrapalhar a leitura dos textos */
+}
+
+.content-ludico {
+    position: relative;
+    z-index: 2; /* Traz todo o conteúdo (textos e cartões) para a frente da imagem */
+}
+
+.text-shadow {
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9); /* Cria um brilho atrás do título para leitura perfeita */
+}
+
+.cards-grid-centered {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.frosted-glass {
+    background-color: rgba(255, 255, 255, 0.92); /* Fundo quase sólido para destacar o texto da imagem */
+    backdrop-filter: blur(5px); /* Efeito moderno de vidro fosco no fundo do cartão */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Garante que o layout dividido antigo seja ignorado nesta nova estrutura */
+.split-layout {
+    display: none; 
+}
