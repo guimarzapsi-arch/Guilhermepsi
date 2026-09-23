@@ -248,6 +248,10 @@ a {
     margin-bottom: 20px;
     font-size: 1.05rem;
     color: var(--dark-green);
+    text-align: justify; /* Alinha o texto rigorosamente nas margens esquerda e direita (ABNT) */
+    hyphens: auto; /* Permite a hifenização automática caso uma palavra seja muito longa */
+}
+
 }
 
 /* Rodapé */
