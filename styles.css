@@ -9,7 +9,7 @@
     --gray-text: #555555;
 }
 
-/* Reset e Tipografia */
+/* Reset e Tipografia Globais */
 * {
     margin: 0;
     padding: 0;
@@ -125,7 +125,7 @@ a {
     color: var(--rosy-brown);
 }
 
-/* Seções e Fundos */
+/* Seções e Fundos Genéricos */
 .section {
     padding: 80px 20px;
 }
@@ -138,30 +138,47 @@ a {
     background-color: var(--beige);
 }
 
-/* Layout Split (Você já passou por isso?) */
-.split-layout {
+/* Seção Lúdica com Background (Você já passou por isso?) */
+.section-ludica {
+    position: relative;
+    padding: 100px 20px;
+    background-color: var(--beige);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
+    overflow: hidden;
 }
 
-.image-box {
-    flex: 1;
-}
-
-.image-box img {
+.background-ludica {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 12px;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    object-position: center;
+    z-index: 0;
+    opacity: 0.35;
+    pointer-events: none;
 }
 
-/* Grid de Cards Menores */
-.cards-grid-small {
-    flex: 1.5;
+.content-ludico {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.text-shadow {
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9);
+}
+
+.cards-grid-centered {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .card-small {
@@ -170,6 +187,12 @@ a {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     border: 1px solid #f0f0f0;
+}
+
+.frosted-glass {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .card-small h3 {
@@ -182,7 +205,11 @@ a {
     font-size: 0.95rem;
 }
 
-/* Grid Especialidades */
+.split-layout {
+    display: none; 
+}
+
+/* Seção Especialidades */
 .cards-grid-large {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -248,14 +275,14 @@ a {
     margin-bottom: 20px;
     font-size: 1.05rem;
     color: var(--dark-green);
-    text-align: justify; /* Alinha o texto rigorosamente nas margens esquerda e direita (ABNT) */
-    hyphens: auto; /* Permite a hifenização automática caso uma palavra seja muito longa */
+    text-align: justify;
+    hyphens: auto;
 }
 
-/* --- CORREÇÃO DO RODAPÉ --- */
+/* Rodapé */
 .footer {
-    background-color: var(--midnight-green) !important; /* Força a cor de fundo Midnight Green */
-    color: var(--white) !important; /* Força o texto em branco */
+    background-color: var(--midnight-green) !important;
+    color: var(--white) !important;
     padding: 60px 20px 20px;
     font-size: 0.95rem;
 }
@@ -279,8 +306,34 @@ a {
     color: #e0e5e3 !important;
 }
 
+.footer-contact-info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-contact-info a {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.footer-contact-info a:hover {
+    color: var(--rosy-brown);
+}
+
+.footer-disclaimer {
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
 .footer-links li {
-    list-style: none; /* Remove as bolinhas da lista no rodapé */
+    margin-bottom: 12px;
 }
 
 .footer-links a {
@@ -329,13 +382,8 @@ a {
     font-size: 0.8rem;
 }
 
-}
-
-/* --- CORREÇÃO DE RESPONSIVIDADE (MOBILE) --- */
-/* Certifique-se de que este bloco @media substitua o antigo no final do arquivo */
-
+/* Responsividade (Tablets e Celulares) */
 @media (max-width: 992px) {
-    /* Força o empilhamento da foto e do texto na seção Sobre Mim em tablets e celulares */
     .about-layout {
         display: flex;
         flex-direction: column !important;
@@ -344,20 +392,17 @@ a {
         gap: 40px;
     }
     
-    /* Ajusta a largura da foto para não ficar gigante no celular */
     .about-image-frame {
         width: 100%;
         max-width: 400px;
     }
 
-    /* Centraliza o título "Sobre Mim" no mobile */
     .about-text .title-brown {
         text-align: center !important;
     }
     
-    /* Centraliza o texto no mobile (opcional, mas recomendado para leitura) */
     .about-text p {
-        text-align: left; /* Ou 'justify' se preferir manter o justificado no mobile */
+        text-align: justify;
     }
 }
 
@@ -366,6 +411,7 @@ a {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+        height: auto;
     }
     
     .nav-menu {
@@ -374,14 +420,13 @@ a {
     }
     
     .cards-grid-small {
-        grid-template-columns: 1fr; /* 1 cartão por linha no mobile */
+        grid-template-columns: 1fr;
     }
     
     .title-dark, .title-brown {
         font-size: 2rem;
     }
     
-    /* Ajusta o rodapé para mobile */
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -391,61 +436,3 @@ a {
         justify-content: center;
     }
 }
-
-/* --- NOVOS ESTILOS PARA A SEÇÃO LÚDICA COM BACKGROUND --- */
-
-.section-ludica {
-    position: relative; /* Define que os elementos absolutos dentro dela usarão ela como limite */
-    padding: 100px 20px;
-    background-color: var(--beige);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden; /* Corta qualquer pedaço da imagem que tente vazar da seção */
-}
-
-.background-ludica {
-    position: absolute; /* Remove a imagem do fluxo normal, impedindo que ela empurre textos */
-    top: 0;
-    left: 0;
-    width: 100%; /* Força a largura exata da seção */
-    height: 100%; /* Força a altura exata da seção */
-    object-fit: cover; /* Cobre todo o espaço sem distorcer, cortando as bordas se necessário */
-    object-position: center;
-    z-index: 0; /* Coloca a imagem no nível mais profundo (atrás de tudo) */
-    opacity: 0.35;
-    pointer-events: none; /* Garante que a imagem não interfira em cliques nos botões */
-}
-
-.content-ludico {
-    position: relative;
-    z-index: 10; /* Eleva os textos e cartões para ficarem acima da imagem de fundo */
-    width: 100%;
-    max-width: 1200px;
-}
-
-
-.text-shadow {
-    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9); /* Cria um brilho atrás do título para leitura perfeita */
-}
-
-.cards-grid-centered {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.frosted-glass {
-    background-color: rgba(255, 255, 255, 0.92); /* Fundo quase sólido para destacar o texto da imagem */
-    backdrop-filter: blur(5px); /* Efeito moderno de vidro fosco no fundo do cartão */
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Garante que o layout dividido antigo seja ignorado nesta nova estrutura */
-.split-layout {
-    display: none; 
-}
-
-
