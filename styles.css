@@ -315,28 +315,35 @@ a {
 /* --- NOVOS ESTILOS PARA A SEÇÃO LÚDICA COM BACKGROUND --- */
 
 .section-ludica {
-    position: relative;
-    overflow: hidden; /* Impede que a imagem vaze da seção */
+    position: relative; /* Define que os elementos absolutos dentro dela usarão ela como limite */
     padding: 100px 20px;
     background-color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Corta qualquer pedaço da imagem que tente vazar da seção */
 }
 
 .background-ludica {
-    position: absolute;
+    position: absolute; /* Remove a imagem do fluxo normal, impedindo que ela empurre textos */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra todo o fundo sem distorcer */
+    width: 100%; /* Força a largura exata da seção */
+    height: 100%; /* Força a altura exata da seção */
+    object-fit: cover; /* Cobre todo o espaço sem distorcer, cortando as bordas se necessário */
     object-position: center;
-    z-index: 1; /* Coloca a imagem no fundo */
-    opacity: 0.35; /* Deixa a imagem sutil para não atrapalhar a leitura dos textos */
+    z-index: 0; /* Coloca a imagem no nível mais profundo (atrás de tudo) */
+    opacity: 0.35;
+    pointer-events: none; /* Garante que a imagem não interfira em cliques nos botões */
 }
 
 .content-ludico {
     position: relative;
-    z-index: 2; /* Traz todo o conteúdo (textos e cartões) para a frente da imagem */
+    z-index: 10; /* Eleva os textos e cartões para ficarem acima da imagem de fundo */
+    width: 100%;
+    max-width: 1200px;
 }
+
 
 .text-shadow {
     text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9); /* Cria um brilho atrás do título para leitura perfeita */
