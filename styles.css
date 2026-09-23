@@ -436,3 +436,24 @@ a {
     font-size: 0.8rem;
 }
 
+/* --- 1. BASE ORGÂNICA SUTIL (CSS PURO) --- */
+/* Deforma levemente os cartões para tirar o aspecto de "computador" */
+.card-small, .card-large, .about-image-frame {
+    position: relative;
+    border: none !important;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+}
+
+/* --- 2. MOLDURA ARTESANAL CRUZADA (SVG PROGRAMADO) --- */
+/* Desenha as linhas sobrepostas com as cores da sua paleta */
+.card-small::before, .card-large::before, .about-image-frame::before {
+    content: "";
+    position: absolute;
+    /* Expande levemente além da caixa para dar espaço às pontas */
+    top: -3px; left: -3px; right: -3px; bottom: -3px;
+    pointer-events: none; /* Garante que o desenho não impeça o clique nos botões */
+    z-index: 10;
+    
+    /* O código abaixo é a matemática vetorial que recria o seu desenho */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3C!-- Linha Topo (Moss Green) --%3E%3Cpath d='M -2,2 Q 30,3 50,1 T 102,2' fill='none' stroke='%23839958' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linecap='round' opacity='0.8' /%3E%3C!-- Linha Base (Rosy Brown) --%3E%3Cpath d='M -1,98 Q 20,99 60,97 T 103,98' fill='none' stroke='%23D3968C' stroke-width='2.5' vector-effect='non-scaling-stroke' stroke-linecap='round' opacity='0.9' /%3E%3C!-- Linha Esquerda (Dark Green) --%3E%3Cpath d='M 2,-2 Q 1,40 3,70 T 2,103' fill='none' stroke='%230A3323' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linecap='round' opacity='0.85' /%3E%3C!-- Linha Direita (Moss Green) --%3E%3Cpath d='M 98,-3 Q 99,30 97,60 T 98,102' fill='none' stroke='%23839958' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linecap='round' opacity='0.7' /%3E%3C/svg%3E");
+}
