@@ -334,12 +334,22 @@ a {
     }
 }
 
+/* Seções e Fundos Genéricos */
+.section {
+    width: 100%; /* Garante que a seção ocupe toda a tela horizontalmente */
+    padding: 80px 20px;
+    position: relative; /* Importante para o posicionamento da imagem de fundo */
+}
+
 /* --- RODAPÉ DEFINITIVO --- */
 .footer {
+    width: 100%; /* Garante que o rodapé não encolha */
     background-color: var(--midnight-green) !important;
     color: var(--white) !important;
     padding: 60px 20px 20px;
     font-size: 0.95rem;
+    position: relative;
+    z-index: 10;
 }
 
 .footer-grid {
