@@ -138,28 +138,25 @@ a {
 }
 
 /* --- ESTRUTURA DE CAMADAS E DEFORMAÇÕES (SEM ESPAÇOS BRANCOS) --- */
-/* A primeira seção fica no topo. As seguintes entram "por baixo" dela */
-
 .section-ludica {
     background-color: var(--beige);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    /* Topo reto, base ondulada */
     border-radius: 0 0 50% 30% / 0 0 25px 15px; 
     z-index: 10;
 }
 
 #sobre {
-    margin-top: -40px; /* Entra 40px por baixo da seção ludica, matando o espaço branco */
-    padding-top: 120px; /* Compensa o espaço perdido na leitura */
+    margin-top: -40px; 
+    padding-top: 120px; 
     z-index: 9;
     border-radius: 0 0 40% 60% / 0 0 20px 25px;
 }
 
 #especialidades {
-    margin-top: -40px; /* Entra por baixo do sobre */
+    margin-top: -40px; 
     padding-top: 120px;
     z-index: 8;
     border-radius: 0 0 60% 40% / 0 0 25px 15px;
@@ -172,8 +169,8 @@ a {
     padding: 80px 20px 20px;
     font-size: 0.95rem;
     position: relative;
-    z-index: 7; /* Última camada */
-    margin-top: -40px; /* Entra por baixo das especialidades */
+    z-index: 7; 
+    margin-top: -40px; 
     border-radius: 0;
 }
 
@@ -183,11 +180,11 @@ a {
 }
 
 #sobre .title-brown {
-    color: var(--beige) !important; /* Título claro sobre fundo escuro */
+    color: var(--beige) !important; 
 }
 
 #sobre p {
-    color: var(--white); /* Texto claro sobre fundo escuro */
+    color: var(--white); 
 }
 
 /* Elementos da Seção Lúdica */
@@ -424,7 +421,6 @@ a {
     margin-right: -50vw;
     z-index: 20;
     pointer-events: none;
-    /* Margens ajustadas para assentar exatamente na junção sem ocupar espaço no fluxo vertical */
     margin-top: -22px;
     margin-bottom: -23px;
 }
@@ -435,6 +431,31 @@ a {
 
 .divisor-rosa {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M -2,10 Q 30,7 60,13 T 102,10' fill='none' stroke='%23D3968C' stroke-width='3.5' opacity='0.5' vector-effect='non-scaling-stroke' /%3E%3Cpath d='M -2,9.5 Q 30,6.5 60,12.5 T 102,9.5' fill='none' stroke='%23D3968C' stroke-width='2.5' stroke-dasharray='1 4' opacity='0.9' vector-effect='non-scaling-stroke' /%3E%3Cpath d='M -2,10.5 Q 30,7.5 60,13.5 T 102,10.5' fill='none' stroke='%23D3968C' stroke-width='3' stroke-dasharray='2 6' stroke-dashoffset='2' opacity='0.7' vector-effect='non-scaling-stroke' /%3E%3Cpath d='M -2,10 Q 30,7.5 60,12.5 T 102,10' fill='none' stroke='%23D3968C' stroke-width='2' stroke-dasharray='1 5' stroke-dashoffset='1' opacity='1' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
+}
+
+/* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff !important; /* Força o ícone a ficar branco */
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Elevação máxima para não ser coberto por nada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #20b858;
+    transform: scale(1.1);
+    color: #fff !important;
 }
 
 /* Responsividade (Tablets e Celulares) */
@@ -490,34 +511,8 @@ a {
     .social-icons {
         justify-content: center;
     }
-}
-/* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Garante que o botão sobreponha absolutamente tudo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
-.whatsapp-float:hover {
-    background-color: #20b858;
-    transform: scale(1.1); /* Efeito de pulo ao passar o mouse */
-    color: #fff;
-}
-
-/* Otimização exata para evitar que o botão tampe a tela em celulares */
-@media (max-width: 768px) {
+    /* Otimização exata para evitar que o botão tampe a tela em celulares */
     .whatsapp-float {
         width: 55px;
         height: 55px;
@@ -530,4 +525,3 @@ a {
         height: 28px;
     }
 }
-
