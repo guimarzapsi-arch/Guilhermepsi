@@ -21,7 +21,7 @@ body {
     color: var(--gray-text);
     line-height: 1.6;
     background-color: var(--white);
-    overflow-x: hidden; /* Impede a rolagem horizontal indesejada */
+    overflow-x: hidden;
 }
 
 .container {
@@ -126,34 +126,71 @@ a {
     color: var(--rosy-brown);
 }
 
-/* Seções e Fundos Genéricos */
+/* Seções Genéricas */
 .section {
-    width: 100%; /* Garante que a seção ocupe toda a tela horizontalmente */
+    width: 100%;
     padding: 80px 20px;
-    position: relative; /* Essencial para a imagem de fundo lúdica */
-    /* Deformação orgânica subtil para emular folha desenhada */
-    border-radius: 40% 60% 70% 30% / 15px 25px 20px 10px;
+    position: relative;
 }
 
 .bg-white {
     background-color: var(--white);
 }
 
-.bg-beige {
-    background-color: var(--beige);
-}
+/* --- ESTRUTURA DE CAMADAS E DEFORMAÇÕES (SEM ESPAÇOS BRANCOS) --- */
+/* A primeira seção fica no topo. As seguintes entram "por baixo" dela */
 
-/* Seção Lúdica com Background (Você já passou por isso?) */
 .section-ludica {
     background-color: var(--beige);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    /* Deformação orgânica com valores únicos para não parecer repetitivo */
-    border-radius: 50% 30% 60% 40% / 20px 10px 25px 15px;
+    /* Topo reto, base ondulada */
+    border-radius: 0 0 50% 30% / 0 0 25px 15px; 
+    z-index: 10;
 }
 
+#sobre {
+    margin-top: -40px; /* Entra 40px por baixo da seção ludica, matando o espaço branco */
+    padding-top: 120px; /* Compensa o espaço perdido na leitura */
+    z-index: 9;
+    border-radius: 0 0 40% 60% / 0 0 20px 25px;
+}
+
+#especialidades {
+    margin-top: -40px; /* Entra por baixo do sobre */
+    padding-top: 120px;
+    z-index: 8;
+    border-radius: 0 0 60% 40% / 0 0 25px 15px;
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--midnight-green) !important;
+    color: var(--white) !important;
+    padding: 80px 20px 20px;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 7; /* Última camada */
+    margin-top: -40px; /* Entra por baixo das especialidades */
+    border-radius: 0;
+}
+
+/* Cores e Estilos Específicos da Seção Sobre Mim */
+.bg-moss {
+    background-color: var(--moss-green);
+}
+
+#sobre .title-brown {
+    color: var(--beige) !important; /* Título claro sobre fundo escuro */
+}
+
+#sobre p {
+    color: var(--white); /* Texto claro sobre fundo escuro */
+}
+
+/* Elementos da Seção Lúdica */
 .background-ludica {
     position: absolute;
     top: 0;
@@ -208,10 +245,7 @@ a {
 
 .card-small p {
     font-size: 0.95rem;
-}
-
-.split-layout {
-    display: none; 
+    color: var(--gray-text);
 }
 
 /* Seção Especialidades */
@@ -249,7 +283,7 @@ a {
     font-size: 1.2rem;
 }
 
-/* Seção Sobre Mim */
+/* Layout Sobre Mim */
 .about-layout {
     display: flex;
     align-items: center;
@@ -279,24 +313,11 @@ a {
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.05rem;
-    color: var(--dark-green);
     text-align: justify;
     hyphens: auto;
 }
 
 /* Rodapé Definitivo */
-.footer {
-    width: 100%;
-    background-color: var(--midnight-green) !important;
-    color: var(--white) !important;
-    padding: 60px 20px 20px;
-    font-size: 0.95rem;
-    position: relative;
-    z-index: 10;
-    /* Topo do rodapé deformado e orgânico; base perfeitamente reta */
-    border-radius: 60% 40% 0% 0% / 25px 15px 0 0;
-}
-
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -391,12 +412,11 @@ a {
     font-size: 0.8rem;
 }
 
-/* Divisores de Seção (Efeito Giz Granulado Espesso) */
+/* Divisores de Seção (Giz Granulado) */
 .divisor-secao {
     width: 100vw;
-    height: 45px; /* Espessura aumentada */
+    height: 45px; 
     background-color: transparent;
-    margin: -22px 0;
     position: relative;
     left: 50%;
     right: 50%;
@@ -404,6 +424,9 @@ a {
     margin-right: -50vw;
     z-index: 20;
     pointer-events: none;
+    /* Margens ajustadas para assentar exatamente na junção sem ocupar espaço no fluxo vertical */
+    margin-top: -22px;
+    margin-bottom: -23px;
 }
 
 .divisor-verde {
