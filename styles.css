@@ -131,6 +131,8 @@ a {
     width: 100%; /* Garante que a seção ocupe toda a tela horizontalmente */
     padding: 80px 20px;
     position: relative; /* Essencial para a imagem de fundo lúdica */
+    /* Deformação orgânica subtil para emular folha desenhada */
+    border-radius: 40% 60% 70% 30% / 15px 25px 20px 10px;
 }
 
 .bg-white {
@@ -148,6 +150,8 @@ a {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    /* Deformação orgânica com valores únicos para não parecer repetitivo */
+    border-radius: 50% 30% 60% 40% / 20px 10px 25px 15px;
 }
 
 .background-ludica {
@@ -289,6 +293,8 @@ a {
     font-size: 0.95rem;
     position: relative;
     z-index: 10;
+    /* Topo do rodapé deformado e orgânico; base perfeitamente reta */
+    border-radius: 60% 40% 0% 0% / 25px 15px 0 0;
 }
 
 .footer-grid {
