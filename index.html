@@ -17,19 +17,19 @@
     <meta property="og:title" content="Guilherme Martins | Psicologia Clínica">
     <meta property="og:description" content="Atendimento psicológico clínico para adolescentes e adultos. Agende sua sessão.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seusite.github.io/"> <!-- Atualize com o seu link real -->
-    <meta property="og:image" content="imagens/image_8.png"> <!-- A imagem que aparecerá no WhatsApp (estou usando sua foto de perfil) -->
+    <meta property="og:url" content="https://seusite.github.io/"> 
+    <meta property="og:image" content="imagens/image_8.png"> 
     
     <!-- Favicon (O ícone da aba do navegador) -->
-    <link rel="icon" type="image/png" href="imagens/image_8.png"> <!-- Usando sua foto como ícone. Se preferir, crie um ícone menor e mude o nome do arquivo aqui -->
+    <link rel="icon" type="image/png" href="imagens/image_8.png"> 
 
     <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Arquivo de Estilos (Versão 8 para quebrar o cache) -->
-    <link rel="stylesheet" href="styles.css?v=8">
+    <!-- Arquivo de Estilos (Versão 9 para quebrar o cache) -->
+    <link rel="stylesheet" href="styles.css?v=9">
 
     <!-- Google tag (gtag.js) para Google Ads -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469961575"></script>
@@ -54,7 +54,6 @@
                 <a href="#sobre">Sobre Mim</a>
                 <a href="#especialidades">Atendimentos</a>
                 <a href="#contato">Contato</a>
-                <!-- Segurança Adicionada: rel="noopener noreferrer" -->
                 <a href="https://wa.me/+5511932304341" target="_blank" rel="noopener noreferrer" class="btn-primary">Agendar Consulta</a>
             </nav>
         </div>
@@ -108,14 +107,12 @@
         <div class="container">
             <div class="about-layout">
                 <div class="about-image-frame">
-                    <!-- Otimização de Performance: loading="lazy" informa ao navegador para só baixar esta imagem quando o paciente rolar até aqui -->
                     <img src="imagens/IMG_1956.png" alt="Foto oficial do Psicólogo Guilherme Martins" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h2 class="title-brown text-left">Sobre Mim</h2>
                     <p>Sou psicólogo e psicanalista clínico, com ampla experiência no atendimento de diferentes demandas emocionais ao longo do desenvolvimento humano. Atuo no acompanhamento de pessoas que enfrentam ansiedade, depressão, burnout, dificuldades nos relacionamentos, conflitos emocionais, processos de luto, crises existenciais e outras formas de sofrimento psíquico. Acredito que o gesto de buscar ajuda carrega, em si, uma dimensão profundamente humana, marcada pela coragem de entrar em contato com o próprio sofrimento e com o desejo de transformação.</p>
                     <p>Busco, em cada encontro, construir um espaço terapêutico suficientemente seguro, no qual os afetos possam ser reconhecidos, as dores acolhidas e as potencialidades gradualmente elaboradas. Acredito em processos terapêuticos que respeitam o tempo psíquico de cada pessoa e valorizam os caminhos singulares do amadurecimento emocional.</p>
-                    <!-- Segurança Adicionada: rel="noopener noreferrer" -->
                     <a href="https://wa.me/+5511932304341" target="_blank" rel="noopener noreferrer" class="btn-primary mt-20">Saiba Mais</a>
                 </div>
             </div>
@@ -133,31 +130,62 @@
             </div>
             
             <div class="cards-grid-large">
+                
+                <!-- Ícone 1: Users (Família e Problemas Relacionais) -->
                 <div class="card-large">
-                    <div class="icon">❁</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
                     <h3>Estresse e Problemas Familiares</h3>
                     <p>Acolhimento para lidar com preocupações do cotidiano</p>
                 </div>
+                
+                <!-- Ícone 2: Cloud Rain (Depressão) -->
                 <div class="card-large">
-                    <div class="icon">♡</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
+                        </svg>
+                    </div>
                     <h3>Depressão</h3>
                     <p>Espaço seguro para cuidar de sentimentos profundos</p>
                 </div>
+                
+                <!-- Ícone 3: Activity (Ansiedade) -->
                 <div class="card-large">
-                    <div class="icon">✧</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.48 12H2"/>
+                        </svg>
+                    </div>
                     <h3>Ansiedade</h3>
                     <p>Acompanhamento especializado para crianças e adolescentes</p>
                 </div>
+                
+                <!-- Ícone 4: Heart Handshake (Orientação para Pais) -->
                 <div class="card-large">
-                    <div class="icon">⚇</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/>
+                        </svg>
+                    </div>
                     <h3>Orientação para Pais e Famílias</h3>
                     <p>Suporte para compreender e apoiar o desenvolvimento</p>
                 </div>
+                
+                <!-- Ícone 5: Sprout (Desenvolvimento Emocional) -->
                 <div class="card-large">
-                    <div class="icon">⌂</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                        </svg>
+                    </div>
                     <h3>Desenvolvimento Emocional</h3>
                     <p>Promoção do autoconhecimento em todas as fases da vida</p>
                 </div>
+
             </div>
         </div>
     </section>
